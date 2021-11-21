@@ -24,6 +24,7 @@ void Fast_Loop()
 void Mid1_Loop()
 {
 	Relay_TMR_PowerOff();
+	
 }
 
 

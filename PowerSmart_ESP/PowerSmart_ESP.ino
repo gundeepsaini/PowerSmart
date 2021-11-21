@@ -24,17 +24,16 @@ To-Do:
 #include "Secrets.h"
 #include <Wire.h> 
 #include "src/LiquidCrystal/LiquidCrystal_I2C.h"
-//#include "LiquidCrystal_I2C.h"
 #include <ArduinoOTA.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
-//#include <NTPClient.h>
 #include <WiFiUdp.h>
-//#include <TimeLib.h>
 #include <ESP8266WebServer.h>
 #include <EEPROM.h>
+//#include <NTPClient.h>
+//#include <TimeLib.h>
 //#include <WebSocketsClient.h>
-#include <ArduinoJson.h> 
+//#include <ArduinoJson.h> 
 
 
 
@@ -123,6 +122,7 @@ void setup()
   Blynk_Config();
   Read_Memory();
   //Alexa_Config();
+  Time_NTP_Config(); 
   
   lcd.setCursor(0,1);
   lcd.print("Ready!");  
