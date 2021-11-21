@@ -8,11 +8,11 @@ void Always_loop()
 
 void Fast_Loop()
 {
-    Blynk.run();
-    server.handleClient();
-    Alexa_Handle();
+   Blynk.run();
+   server.handleClient();
+    //Alexa_Handle();
     
-    READ_I2C_Data();
+   READ_I2C_Data();
 	Button_CMD();
 	Prep_I2C_Data();
 	Relay_StateChange_Events();
@@ -47,4 +47,5 @@ void Slow_Loop()
 void VerySlow_Loop()
 {
    //Blynk_Graph_DataPush();
+   MQTT_heartbeat();
 }

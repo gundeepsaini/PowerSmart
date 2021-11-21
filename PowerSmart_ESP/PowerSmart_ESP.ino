@@ -5,7 +5,6 @@
 Date: Jan 2020 (v4)
 Device: ESP8266 NodeMcU  <---> Atmega328
 Block Diagram / Circuit Diagram: OneNote Workbook
-Programmed with external editor: Sublime Text
 
 Note:
   - Reset ESP after upload, disable IPv6, 
@@ -17,19 +16,6 @@ To-Do:
   - Web server: WebPage detailing with on/off function  
   - Power Calc: Setup CT calc in Arduino
 
-Changes:
-  - v0 | 04.07.2020
-    Moved to github
-
-  - v43 | 22.03.2020
-    Added Alexa support 
-
-  - v42 | 22.03.2020
-    Updated code and moved to Github
-    Shifted personal config data to Secret.h file
-
-  - v41 | 11.01.2020
-    Ongoing changes
 
 ------------------------------------------- */
 
@@ -56,7 +42,7 @@ unsigned long looptime_Fast = 0;    // in secs
 unsigned long looptime_Mid1 = 2;    // in secs
 unsigned long looptime_Mid2 = 5;   // in secs
 unsigned long looptime_Slow       = 30;      // in secs
-unsigned long looptime_VerySlow   = 15 *(60);      // in secs
+unsigned long looptime_VerySlow   = 05 *(60);      // in secs
 unsigned long NTP_Update_Period   = 06 *(60*60);    // in secs
 unsigned long utcOffsetInSeconds  = 01 *(60*60);    // in secs
 unsigned long LCD_TMR_SP          = 30;             // in secs
@@ -135,7 +121,7 @@ void setup()
   OTA_Config();
   Blynk_Config();
   Read_Memory();
-  Alexa_Config();
+  //Alexa_Config();
   
   lcd.setCursor(0,1);
   lcd.print("Ready!");  
