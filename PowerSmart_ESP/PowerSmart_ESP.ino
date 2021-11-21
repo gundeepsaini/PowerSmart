@@ -123,6 +123,7 @@ void setup()
   Read_Memory();
   //Alexa_Config();
   Time_NTP_Config(); 
+  MQTT_config();
   
   lcd.setCursor(0,1);
   lcd.print("Ready!");  

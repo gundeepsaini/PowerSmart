@@ -17,6 +17,7 @@ void Fast_Loop()
 	Prep_I2C_Data();
 	Relay_StateChange_Events();
 	Send_I2C_Cmd();
+	MQTT_loop();  
 }
 
 
@@ -24,7 +25,7 @@ void Fast_Loop()
 void Mid1_Loop()
 {
 	Relay_TMR_PowerOff();
-	
+
 }
 
 
