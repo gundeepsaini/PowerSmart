@@ -75,7 +75,9 @@ void MQTT_reconnect()
         //MQTT_publish_config();  
         Serial.println("MQTT connected");
         client.publish(MQTT_TOPIC_WILL, MQTT_ONLINE, true);
-        client.subscribe(MQTT_TOPIC_CMD);
+        client.subscribe(MQTT_TOPIC_CMD1);
+        client.subscribe(MQTT_TOPIC_CMD2);
+        client.subscribe(MQTT_TOPIC_CMD3);
       }
       lastReconnectAttempt = millis()/1000;
   }
@@ -152,9 +154,8 @@ void MQTT_heartbeat()
   else
         msg = msg + 0;
 
-  client.publish(MQTT_TOPIC_STATE, msg, true);
+  char data[5];
+  itoa(msg, data, 5);
+
+  client.publish(MQTT_TOPIC_STATE, data, true);
 }
-
-
-
-

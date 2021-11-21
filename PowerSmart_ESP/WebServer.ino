@@ -12,6 +12,10 @@ void WebServer_Config()
 }
 
 
+void Prep_webpage1();
+
+
+
 void Webpage_Home1()
 {
   Prep_webpage1();
@@ -42,7 +46,7 @@ void Webpage_restart()
 
 
 
-
+/*
 
 
 
@@ -65,7 +69,7 @@ void Webpage_restart()
  * Version 0.11 September, 2009
  * Copyright 2009 Ken Shirriff
  * http://arcfn.com
- */
+ ///
 
 #include <IRremote.h>
 
@@ -202,7 +206,7 @@ void sendCode(int repeat) {
       Serial.println(codeValue, HEX);
     }
   } 
-  else if (codeType == UNKNOWN /* i.e. raw */) {
+  else if (codeType == UNKNOWN /* i.e. raw ) {
     // Assume 38 KHz
     irsend.sendRaw(rawCodes, codeLen, 38);
     Serial.println("Sent raw");
@@ -236,3 +240,5 @@ void loop() {
   }
   lastButtonState = buttonState;
 }
+
+*/
