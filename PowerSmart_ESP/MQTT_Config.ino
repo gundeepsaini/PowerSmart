@@ -20,7 +20,7 @@ const char* mqtt_server     = SECRET_MQTT_Server;
 const char* mqtt_user       = SECRET_MQTT_User;
 const char* mqtt_password   = SECRET_MQTT_Pass;
 
-// Light
+
 #define MQTT_TOPIC_STATE       "HA/Devices/PowerSmart/state" 
 #define MQTT_TOPIC_CMD1        "HA/Devices/PowerSmart/cmd1"
 #define MQTT_TOPIC_CMD2        "HA/Devices/PowerSmart/cmd2"
