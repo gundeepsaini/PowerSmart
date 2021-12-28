@@ -21,13 +21,13 @@ const char* mqtt_user       = SECRET_MQTT_User;
 const char* mqtt_password   = SECRET_MQTT_Pass;
 
 
-#define MQTT_TOPIC_STATE       "HA/Devices/PowerSmart/state" 
-#define MQTT_TOPIC_CMD1        "HA/Devices/PowerSmart/cmd1"
-#define MQTT_TOPIC_CMD2        "HA/Devices/PowerSmart/cmd2"
-#define MQTT_TOPIC_CMD3        "HA/Devices/PowerSmart/cmd3"  
+#define MQTT_TOPIC_STATE       "HA/PowerSmart/state" 
+#define MQTT_TOPIC_CMD1        "HA/PowerSmart/cmd1"
+#define MQTT_TOPIC_CMD2        "HA/PowerSmart/cmd2"
+#define MQTT_TOPIC_CMD3        "HA/PowerSmart/cmd3"  
 
 // Will Topic - Availability
-#define MQTT_TOPIC_WILL        "HA/Devices/PowerSmart/status"     
+#define MQTT_TOPIC_WILL        "HA/PowerSmart/status"     
 #define MQTT_OFFLINE           "Offline"
 #define MQTT_ONLINE            "Active"
 
