@@ -5,8 +5,8 @@
 
 /******************** LIB **************************************/
 #define MQTT_MAX_PACKET_SIZE 1024  // < ----- Change in lib: This is because the defaul maxium length is 128b. So just go to PubSubClient.h and change #define MQTT_MAX_PACKET_SIZE 128 to #define MQTT_MAX_PACKET_SIZE 1024
-#include <PubSubClient.h>
-#include <ArduinoJson.h>
+#include "src/PubSubClient/PubSubClient.h"
+//#include <ArduinoJson.h>
 
 
 /********************* Var *************************************/
@@ -137,22 +137,24 @@ void MQTT_MessageRecd_callback(char* p_topic, byte* p_payload, unsigned int p_le
 
 void MQTT_heartbeat()
 {  
-  int msg = 0;
+  int msg1 = 0, msg2 = 0, msg3 = 0;
 
   if(Relay1_State == 1) 
-        msg = msg + 100;
+        msg1 = 100;
   else
-        msg = msg + 0;
+        msg1 = 0;
   
   if(Relay2_State == 1) 
-        msg = msg + 10;
+        msg2 = 10;
   else
-        msg = msg + 0;      
+        msg2 = 0;      
 
   if(Relay3_State == 1) 
-        msg = msg + 1;
+        msg3 = 1;
   else
-        msg = msg + 0;
+        msg3 = 0;
+
+  int msg = msg1 + msg2 + msg3;
 
   char data[5];
   itoa(msg, data, 5);

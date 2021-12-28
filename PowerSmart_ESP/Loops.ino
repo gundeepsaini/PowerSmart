@@ -25,7 +25,6 @@ void Fast_Loop()
 void Mid1_Loop()
 {
 	Relay_TMR_PowerOff();
-
 }
 
 
@@ -42,12 +41,15 @@ void Mid2_Loop()
 
 void Slow_Loop()
 {
-  
+  //Blynk_Graph_DataPush();
+   MQTT_heartbeat();
+
+   if(!Time_NTP_isValid())
+      Time_NTP_Update(); 
 }
 
 
 void VerySlow_Loop()
-{
-   //Blynk_Graph_DataPush();
-   MQTT_heartbeat();
+{   
+ 	Time_NTP_Update();
 }

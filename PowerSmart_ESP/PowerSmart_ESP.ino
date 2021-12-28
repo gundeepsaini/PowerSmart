@@ -21,19 +21,19 @@ To-Do:
 
 
 /* ------------- LIB ------------------------------ */
+
 #include "Secrets.h"
-#include <Wire.h> 
 #include "src/LiquidCrystal/LiquidCrystal_I2C.h"
+
+
+
 #include <ArduinoOTA.h>
-#include <ESP8266WiFi.h>
-#include <BlynkSimpleEsp8266.h>
-#include <WiFiUdp.h>
 #include <ESP8266WebServer.h>
+#include <Wire.h> 
 #include <EEPROM.h>
-//#include <NTPClient.h>
-//#include <TimeLib.h>
-//#include <WebSocketsClient.h>
-//#include <ArduinoJson.h> 
+
+
+#include <BlynkSimpleEsp8266.h>
 
 
 
@@ -41,8 +41,8 @@ To-Do:
 unsigned long looptime_Fast = 0;    // in secs
 unsigned long looptime_Mid1 = 2;    // in secs
 unsigned long looptime_Mid2 = 5;   // in secs
-unsigned long looptime_Slow       = 30;      // in secs
-unsigned long looptime_VerySlow   = 05 *(60);      // in secs
+unsigned long looptime_Slow       = 05 *(60);      // in secs
+unsigned long looptime_VerySlow   = 30 *(60);      // in secs
 unsigned long NTP_Update_Period   = 06 *(60*60);    // in secs
 unsigned long utcOffsetInSeconds  = 01 *(60*60);    // in secs
 unsigned long LCD_TMR_SP          = 30;             // in secs
@@ -52,8 +52,8 @@ unsigned long LCD_TMR_SP          = 30;             // in secs
 
 /* ------------- VAR ------------------------------ */
 const char* OTA_Password     = SECRET_Device_OTA_PASS; 
-const char* ssid             = SECRET_WIFI_SSID2;
-const char* pass             = SECRET_WIFI_PASS2;
+const char* ssid             = SECRET_WIFI_SSID3;
+const char* pass             = SECRET_WIFI_PASS3;
 const char* DeviceHostName   = SECRET_Device_Name3;
 const char* BlynkAuth        = SECRET_BLYNK_AUTH3;
 
@@ -75,7 +75,6 @@ byte I2C_Com_Err;
 
 //(lcd_Addr,En,Rw,Rs,d4,d5,d6,d7,backlighPin,t_backlighPol)
 LiquidCrystal_I2C lcd(0x3F,2,1,0,4,5,6,7,3,POSITIVE);
-WidgetTerminal terminal(V0);
 ESP8266WebServer server(80);
 
 
@@ -121,9 +120,8 @@ void setup()
   OTA_Config();
   Blynk_Config();
   Read_Memory();
-  //Alexa_Config();
-  Time_NTP_Config(); 
-  MQTT_config();
+  Config_Time();
+  MQTT_Config();
   
   lcd.setCursor(0,1);
   lcd.print("Ready!");  

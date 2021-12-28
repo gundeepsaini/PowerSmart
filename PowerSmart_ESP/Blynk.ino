@@ -38,10 +38,7 @@ void Blynk_ForceUpdate()
 
 BLYNK_WRITE(V0)
 {
-// Terminal
-  String Data = param.asStr();
-  if(Data == String("OTA")) 
-      OTA_Mode = 1;
+
 }
 
 
