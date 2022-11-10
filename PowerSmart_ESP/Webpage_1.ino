@@ -21,8 +21,17 @@ void Prep_webpage1()
   // Start chaning here onwards.....
 
   String body_table_row01 =String("<tr><td>01</td><td>Relay State 1</td><td>")        + String(Relay1_State)       + String("</td><td>-</td></tr>");
-  String body_table_row02 =String("<tr><td>01</td><td>Relay State 2</td><td>")        + String(Relay2_State)       + String("</td><td>-</td></tr>");
-  String body_table_row03 =String("<tr><td>01</td><td>Relay State 3</td><td>")        + String(Relay3_State)       + String("</td><td>-</td></tr>");  
+  String body_table_row02 =String("<tr><td>02</td><td>Relay State 2</td><td>")        + String(Relay2_State)       + String("</td><td>-</td></tr>");
+  String body_table_row03 =String("<tr><td>03</td><td>Relay State 3</td><td>")        + String(Relay3_State)       + String("</td><td>-</td></tr>");  
+
+  String body_table_row04 =String("<tr><td>04</td><td>Relay 1 Time Setpoint</td><td>")  + String(Relay1_TMR)       + String("</td><td>mins</td></tr>");  
+  String body_table_row05 =String("<tr><td>05</td><td>Relay 1 Time Left</td><td>")      + String(Relay1_TimeLeft)  + String("</td><td>mins</td></tr>");  
+  String body_table_row06 =String("<tr><td>06</td><td>Relay 2 Time Setpoint</td><td>")  + String(Relay2_TMR)       + String("</td><td>mins</td></tr>");  
+  String body_table_row07 =String("<tr><td>07</td><td>Relay 2 Time Left</td><td>")      + String(Relay2_TimeLeft)  + String("</td><td>mins</td></tr>");   
+  String body_table_row08 =String("<tr><td>08</td><td>Relay 3 Time Setpoint</td><td>")  + String(Relay3_TMR)       + String("</td><td>mins</td></tr>");  
+  String body_table_row09 =String("<tr><td>09</td><td>Relay 3 Time Left</td><td>")      + String(Relay3_TimeLeft)  + String("</td><td>mins</td></tr>");  
+  
+
 
   webpage1 = page_head +
   			 body_start +
@@ -31,6 +40,12 @@ void Prep_webpage1()
   			 body_table_row01 +
          body_table_row02 +
          body_table_row03 +
+         body_table_row04 +
+         body_table_row05 +
+         body_table_row06 +
+         body_table_row07 +
+         body_table_row08 +
+         body_table_row09 +
   			 body_end; 
          
 }

@@ -65,7 +65,7 @@ String webpage1="";
 float Irms, Power;
 bool Relay1_State,Relay2_State,Relay3_State;
 bool Last_Relay1_State,Last_Relay2_State,Last_Relay3_State;
-int Relay1_TMR=0,Relay2_TMR=120,Relay3_TMR=120;
+int Relay1_TMR=0,Relay2_TMR=0,Relay3_TMR=120;
 unsigned long  Relay1_TMR_Start,Relay2_TMR_Start,Relay3_TMR_Start;
 unsigned long LCD_TMR_Start=1;
 int Relay1_TimeLeft,Relay2_TimeLeft,Relay3_TimeLeft;
