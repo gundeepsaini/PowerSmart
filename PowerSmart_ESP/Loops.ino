@@ -8,7 +8,7 @@ void Always_loop()
 
 void Fast_Loop()
 {
-   Blynk.run();
+   //Blynk.run();
    server.handleClient();
     //Alexa_Handle();
     

@@ -118,7 +118,7 @@ void setup()
 
   WebServer_Config();
   OTA_Config();
-  Blynk_Config();
+  //Blynk_Config();
   Read_Memory();
   Config_Time();
   MQTT_Config();
