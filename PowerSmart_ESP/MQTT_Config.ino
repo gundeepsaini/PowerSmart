@@ -25,14 +25,18 @@ const char* mqtt_password   = SECRET_MQTT_Pass;
 #define MQTT_TOPIC_CMD1        "HA/PowerSmart/cmd1"
 #define MQTT_TOPIC_CMD2        "HA/PowerSmart/cmd2"
 #define MQTT_TOPIC_CMD3        "HA/PowerSmart/cmd3"  
+#define MQTT_TOPIC_STATE1        "HA/PowerSmart/state1"
+#define MQTT_TOPIC_STATE2        "HA/PowerSmart/state2"
+#define MQTT_TOPIC_STATE3        "HA/PowerSmart/state3"  
+
 
 // Will Topic - Availability
 #define MQTT_TOPIC_WILL        "HA/PowerSmart/status"     
 #define MQTT_OFFLINE           "Offline"
 #define MQTT_ONLINE            "Active"
 
-#define MQTT_ON                "ON"
-#define MQTT_OFF               "OFF"
+#define MQTT_ON                "1"
+#define MQTT_OFF               "0"
 
 
 
@@ -140,19 +144,37 @@ void MQTT_heartbeat()
   int msg1 = 0, msg2 = 0, msg3 = 0;
 
   if(Relay1_State == 1) 
-        msg1 = 100;
+  {  
+    msg1 = 100;
+    client.publish(MQTT_TOPIC_STATE1, MQTT_ON, true);
+  }
   else
-        msg1 = 0;
+  {
+    msg1 = 0;
+    client.publish(MQTT_TOPIC_STATE1, MQTT_OFF, true);
+  }      
   
   if(Relay2_State == 1) 
-        msg2 = 10;
+  {  
+    msg2 = 10;
+    client.publish(MQTT_TOPIC_STATE2, MQTT_ON, true);
+  }
   else
-        msg2 = 0;      
+  {
+    msg2 = 0;
+    client.publish(MQTT_TOPIC_STATE2, MQTT_OFF, true);
+  } 
 
   if(Relay3_State == 1) 
-        msg3 = 1;
+  {
+    msg3 = 1;
+    client.publish(MQTT_TOPIC_STATE3, MQTT_ON, true);
+  } 
   else
-        msg3 = 0;
+  {
+    msg3 = 0;
+    client.publish(MQTT_TOPIC_STATE3, MQTT_OFF, true);
+  } 
 
   int msg = msg1 + msg2 + msg3;
 
@@ -160,4 +182,6 @@ void MQTT_heartbeat()
   itoa(msg, data, 5);
 
   client.publish(MQTT_TOPIC_STATE, data, true);
+
+
 }
